@@ -15,10 +15,10 @@ func Read(config any) error {
 	if len(os.Args) > 1 {
 		fileName = os.Args[1]
 	}
-	return ReadFile(fileName, config)
+	return ReadFile(config, fileName)
 }
 
-func ReadFile(fileName string, config any) error {
+func ReadFile(config any, fileName string) error {
 	jsonFile, err := os.Open(fileName)
 	if err != nil {
 		return err
